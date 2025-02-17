@@ -31,7 +31,9 @@ function makeCalculator() {
       this.result *= value;
     },
     divide(value) {
-      this.result /= value;
+      if (value !== 0) {
+        this.result /= value;
+      }
     },
   };
 
