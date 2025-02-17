@@ -9,7 +9,7 @@ function makeCalculator() {
 
     operate(operation, value) {
       if (typeof operation === 'function') {
-        operation(value);
+        operation.call(this, value);
       }
 
       return this;
@@ -22,16 +22,16 @@ function makeCalculator() {
     },
 
     add(value) {
-      calculator.result += value;
+      this.result += value;
     },
     subtract(value) {
-      calculator.result -= value;
+      this.result -= value;
     },
     multiply(value) {
-      calculator.result *= value;
+      this.result *= value;
     },
     divide(value) {
-      calculator.result /= value;
+      this.result /= value;
     },
   };
 
